@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="index.css" rel="stylesheet">
+  </head>
+  <body>
+  <div class="container">
+    <h1>Expense Tracker</h1>
+    <hr>
+    <form class="form-inline">
+      <div class="form-group">
+        <label for="ea">Expense Amount:</label>
+        <input type="number" class="form-control" id="amount" placeholder="Enter Expense Amount" name="amount">
+      </div>
+      <div class="form-group">
+        <label for="edesc">Expense Description:</label>
+        <input type="text" class="form-control" id="desc" placeholder="Enter Expense Descripton" name="pwd">
+      </div>
+      <div class="form-group">
+        <label for="sel1">Expense Type:</label>
+        <select class="form-control" id="cat" name="category">
+          <option value="Movie">Movie</option>
+          <option value="Dinner">Dinner</option>
+          <option value="Washing">Washing</option>
+          <option value="Shopping">Shopping</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-default submit" id="submit" value="Add">Add</button>
+      <button type="submit" class="btn btn-default update" style="display: none" id="update" value="Update">Update</button>
+    </form>
+    <table id="table" class="table">
+      <thead>
+        <tr>
+          <th>Amount</th>
+          <th>Description</th>
+          <th>Type</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+    </table>
+
+    <script src="index.js"></script>
+  </body>
+  <footer>Made with ❤️ love in India from ©Snap Impulse</footer>
+</div>
+</html>
