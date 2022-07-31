@@ -20,23 +20,22 @@ document.getElementById("submit").addEventListener("click", function () {
 for (let i = 0; i < localStorage.length; i++) {
   let key = localStorage.key(i);
   let data = JSON.parse(localStorage.getItem(key));
-  const node = document.createElement("li");
-  const node1 = document.createElement("button");
-  const node2 = document.createElement("button");
-  const textnode = document.createTextNode(
-    `${data.Amount} - ${data.Description} - ${data.Type}  -----     `
-  );
-  node.appendChild(textnode);
 
-  node1.innerText = "Delete";
-  node1.value = key;
-  node1.setAttribute("class", "delete");
+  var x = document.createElement("TBODY");
+  var y = document.createElement("TR");
+  var z1 = document.createElement("TD");
+  var z2 = document.createElement("TD");
+  var z3 = document.createElement("TD");
+  var z4 = document.createElement("TD");
 
-  node2.innerText = "Edit";
-  node2.value = key;
-  node2.setAttribute("class", "Edit");
+  z1.innerHTML = "₹ " + data.Amount;
+  z2.innerHTML = data.Description;
+  z3.innerHTML = data.Type;
+  z4.innerHTML = `<button type="button" class="delete btn btn-primary" value=${key} style="background-color:blue; padding:2px">Delete</button> <button type="button"  class="Edit btn btn-primary" value=${key} style="background-color:blue; padding:2px">Edit</button>`;
 
-  document.getElementById("display").append(node, node1, node2);
+  y.append(z1, z2, z3, z4);
+  x.appendChild(y);
+  document.getElementById("table").appendChild(x);
 }
 
 //Deleting the value
